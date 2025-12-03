@@ -93,19 +93,33 @@
             font-size: 2em;
         }
         
-        .form-embed {
-            width: 100%;
-            min-height: 1200px;
-            border: none;
-            border-radius: 10px;
-        }
-        
         .cta-text {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             color: #333;
             font-size: 1.1em;
             line-height: 1.8;
+        }
+        
+        .form-link-button {
+            display: block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 40px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin: 30px auto;
+            max-width: 400px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .form-link-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
         }
         
         .stats {
@@ -138,6 +152,16 @@
             margin-top: 40px;
             padding: 20px;
             opacity: 0.8;
+        }
+        
+        /* Fallback if embedding doesn't work */
+        .embedded-form-notice {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
         }
         
         @keyframes fadeIn {
@@ -229,22 +253,29 @@
             <h2>Get Your Personalized Course Plan</h2>
             <div class="cta-text">
                 <p><strong>How it works:</strong></p>
-                <p>✨ Fill out the form below (5 minutes)<br>
+                <p>✨ Fill out the form (5 minutes)<br>
                 🤖 Our AI analyzes 20+ CMU courses<br>
                 📧 Receive personalized recommendations via email<br>
                 🎓 Register for courses that match your goals!</p>
             </div>
             
-            <!-- REPLACE THIS IFRAME WITH YOUR GOOGLE FORM EMBED CODE -->
-            <iframe 
-                class="form-embed"
-                src="<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdkT5sgv3kgRzVGG5dMr-IwlaKsDxpNMRtvP0pK3waHhzavFQ/viewform?embedded=true" width="640" height="2784" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>"
-                frameborder="0"
-                marginheight="0"
-                marginwidth="0">
-                Loading…
-            </iframe>
-            <!-- END OF FORM EMBED -->
+            <!-- Embedded Google Form -->
+            <div style="margin-top: 20px;">
+                <iframe 
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSdkT5sgv3kgRzVGG5dMr-IwlaKsDxpNMRtvP0pK3waHhzavFQ/viewform?embedded=true"
+                    width="100%" 
+                    height="2800" 
+                    frameborder="0" 
+                    marginheight="0" 
+                    marginwidth="0"
+                    style="border-radius: 10px; background: white;">
+                    Loading form...
+                </iframe>
+            </div>
+            
+            <div class="embedded-form-notice" style="margin-top: 20px;">
+                <p>📧 After submitting, check your email for personalized recommendations within 30 seconds!</p>
+            </div>
         </div>
         
         <div class="footer">
